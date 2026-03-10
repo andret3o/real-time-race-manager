@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Front Desk</title>
+	</head>
+	<body
+		class="flex flex-col items-center justify-center min-h-screen gap-6 p-6"
+	>
+		<form id="auth-form" class="flex flex-col gap-4">
+			<div class="flex gap-4">
+				<input
+					type="password"
+					class="border rounded-lg p-2"
+					placeholder="Access Key"
+				/>
+				<button
+					type="submit"
+					class="bg-black text-white w-max mx-auto p-2 rounded-lg"
+				>
+					Unlock
+				</button>
+			</div>
+			<p class="text-center text-red-500 hidden">Incorrect access key</p>
+		</form>
+
+		<div
+			id="main-content"
+			class="flex flex-col items-center justify-center gap-6 max-w-3xl w-full hidden"
+		>
+			<h1 class="text-4xl font-semibold">Front Desk</h1>
+
+			<button
+				onclick="showAddForm()"
+				class="bg-black text-white w-max mx-auto p-2 rounded-lg"
+			>
+				New session
+			</button>
+
+			<form
+				id="add-form"
+				autocomplete="off"
+				class="hidden flex flex-col gap-4 w-full"
+			>
+				<div class="flex gap-4">
+					<input
+						id="drivers-input"
+						type="text"
+						class="border rounded-lg p-2 flex-1"
+						placeholder="Drivers separated by ',' (max 8)"
+					/>
+					<button
+						type="submit"
+						class="bg-black text-white w-max px-4 py-2 rounded-lg"
+					>
+						Save
+					</button>
+					<button
+						type="button"
+						onclick="hideAddForm()"
+						class="bg-gray-500 text-white w-max px-4 py-2 rounded-lg"
+					>
+						Cancel
+					</button>
+				</div>
+			</form>
+
+			<form
+				id="edit-form"
+				autocomplete="off"
+				class="hidden flex flex-col gap-4 w-full"
+			>
+				<div class="flex gap-4">
+					<input
+						id="edit-input"
+						type="text"
+						class="border rounded-lg p-2 flex-1"
+						placeholder="Drivers separated by ',' (max 8)"
+					/>
+					<button
+						type="submit"
+						class="bg-black text-white w-max px-4 py-2 rounded-lg"
+					>
+						Save
+					</button>
+					<button
+						type="button"
+						onclick="hideEditForm()"
+						class="bg-gray-500 text-white w-max px-4 py-2 rounded-lg"
+					>
+						Cancel
+					</button>
+				</div>
+			</form>
+
+			<div
+				id="sessions-container"
+				class="flex flex-col gap-6 w-full text-sm"
+			></div>
+		</div>
+	</body>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/js/auth.js"></script>
+	<script src="/js/front-desk.js"></script>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Next Race</title>
+	</head>
+	<body class="flex flex-col items-center justify-center min-h-screen gap-6">
+		<h1 class="text-4xl font-semibold">Next Race</h1>
+
+		<div
+			id="drivers-container"
+			class="flex flex-col gap-6 max-w-3xl w-full"
+		></div>
+
+		<button
+			onclick="document.documentElement.requestFullscreen()"
+			class="bg-black text-white px-6 py-3 rounded-lg"
+		>
+			Enter Fullscreen
+		</button>
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/js/next-race.js"></script>
+	</body>
+</html>

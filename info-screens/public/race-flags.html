@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Race Flags</title>
+		<style>
+			.checkered {
+				background-color: white;
+				background-image:
+					linear-gradient(
+						45deg,
+						black 25%,
+						transparent 25%,
+						transparent 75%,
+						black 75%
+					),
+					linear-gradient(
+						45deg,
+						black 25%,
+						transparent 25%,
+						transparent 75%,
+						black 75%
+					);
+				background-size: 100px 100px;
+				background-position:
+					0 0,
+					50px 50px;
+			}
+		</style>
+	</head>
+	<body class="bg-green-500">
+		<button
+			onclick="document.documentElement.requestFullscreen()"
+			class="fixed top-4 right-4 bg-white text-black px-6 py-3 rounded-lg shadow-lg hover:bg-gray-100 z-50"
+		>
+			Enter Fullscreen
+		</button>
+	</body>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/js/race-flags.js"></script>
+</html>

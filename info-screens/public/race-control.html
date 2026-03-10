@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Race Control</title>
+	</head>
+	<body class="flex flex-col items-center justify-center min-h-screen gap-6">
+		<form id="auth-form" class="flex flex-col gap-4">
+			<div class="flex gap-4">
+				<input
+					type="password"
+					class="border rounded-lg p-2"
+					placeholder="Access Key"
+				/>
+
+				<button
+					type="submit"
+					class="bg-black text-white w-max mx-auto p-2 rounded-lg"
+				>
+					Unlock
+				</button>
+			</div>
+			<p id="auth-error" class="text-center text-red-500 hidden">
+				Incorrect access key
+			</p>
+		</form>
+
+		<div
+			id="main-content"
+			class="flex flex-col items-center justify-center gap-6 max-w-3xl w-full hidden"
+		>
+			<h1 class="text-4xl font-semibold">Race Control</h1>
+
+			<div
+				id="next-race-drivers"
+				class="flex flex-col gap-1 text-sm w-full"
+			></div>
+
+			<button
+				onclick="startRace()"
+				class="bg-black text-white w-max mx-auto p-2 rounded-lg"
+			>
+				Start Race
+			</button>
+		</div>
+
+		<div
+			id="active-race"
+			class="flex flex-col items-center justify-center gap-6 max-w-3xl w-full hidden"
+		>
+			<h1 class="text-4xl font-semibold">Race Control</h1>
+
+			<div class="text-6xl font-light" id="race-timer"></div>
+			<div
+				id="race-mode"
+				class="bg-green-500 text-white px-6 py-3 rounded-lg text-sm font-medium"
+			></div>
+
+			<div class="grid grid-cols-2 gap-3 w-full max-w-md">
+				<button id="btn-safe" class="bg-green-500 text-white p-4 rounded-lg">
+					Safe
+				</button>
+				<button id="btn-hazard" class="bg-yellow-400 text-black p-4 rounded-lg">
+					Hazard
+				</button>
+				<button id="btn-danger" class="bg-red-500 text-white p-4 rounded-lg">
+					Danger
+				</button>
+				<button
+					onclick="finishRace()"
+					class="bg-black text-white p-4 rounded-lg col-span-2"
+				>
+					Finish
+				</button>
+			</div>
+		</div>
+
+		<div
+			id="post-race"
+			class="flex flex-col items-center justify-center gap-6 max-w-3xl w-full hidden"
+		>
+			<h1 class="text-4xl font-semibold">Race Control</h1>
+
+			<div class="font-semibold">!! RACE FINISHED !!</div>
+
+			<button
+				id="btn-end-session"
+				class="bg-black text-white w-max mx-auto p-2 rounded-lg"
+			>
+				End Session
+			</button>
+		</div>
+	</body>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/js/auth.js"></script>
+	<script src="/js/race-control.js"></script>
+</html>
