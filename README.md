@@ -4,6 +4,14 @@
 
 ---
 
+## 🎓 Project Context & Evolution
+
+This repository originated as a **school project** designed to explore real-time web architecture and state synchronization.
+
+### 🧪 Current Focus: Automated Testing
+
+While the core racing functionality is complete, this codebase is now being utilized as a primary environment for practicing **End-to-End (E2E) testing with Playwright**.
+
 ## Overview
 
 A complete real-time race management built with Node.js and Socket.IO. Manage races, track lap times, control safety flags, and inform spectators with synchronized displays across multiple screens.
